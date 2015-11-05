@@ -1,0 +1,26 @@
+.text-center {
+  text-align: center !important;
+}
+
+.btn-purple {
+  background-color: #1A2360;
+  color: #fff;
+
+  &:hover {
+    background-color: #283593;
+    color: #fff;
+  }
+
+  &:focus {
+    color: #fff;
+  }
+}
+
+.input-field {
+  position: relative;
+  @extend .form-group;
+}
+
+.img-buble {
+  border-radius: 50px;
+}

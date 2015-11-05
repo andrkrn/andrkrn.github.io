@@ -1,0 +1,152 @@
+nav#main-nav {
+  position: relative;
+
+  .open-nav-container {
+    position: fixed;
+    background-attachment: scroll;
+    background-color: #1A237E;
+    background-image: url("../images/overlay.png");
+    top: .5em;
+    left: .5em;
+    z-index: 1;
+    height: 4.1em;
+
+    h1 {
+      visibility: hidden;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+      line-height: 1.7em;
+      font-family: 'Roboto Condensed', sans-serif;
+      -webkit-transition: .2s ease-out;
+      -moz-transition: .2s ease-out;
+      -o-transition: .2s ease-out;
+      -ms-transition: .2s ease-out;
+      transition: .2s ease-out;
+    }
+
+    &.full-width {
+      top: 0;
+      left: 0;
+      right: 0;
+
+      h1.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .open-main-nav {
+        padding: 1em;
+      }
+    }
+  }
+
+  a.open-main-nav {
+    position: fixed;
+    padding: .5em;
+    background-attachment: scroll;
+    background-color: #1A237E;
+    background-image: url("../images/overlay.png");
+    color: #fff;
+    z-index: 1;
+
+    &.purple {
+      color: #1A237E;
+    }
+
+    i.fa {
+      font-size: 2em;
+    }
+  }
+}
+
+#main-menu-nav {
+  position: fixed;
+  width: 240px;
+  left: -105%;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  height: calc(100% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  overflow-y: auto;
+  will-change: left;
+  @include ease-in-out-cubic(600ms);
+
+  .menu-nav-container {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 100px;
+  }
+
+  .menu-copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 24px;
+    line-height: 24px;
+    font-size: 13px;
+    border-top: 1px solid #e0e0e0;
+    height: 100px;
+
+    p.copyright {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    a {
+      color: #0277bb;
+      text-decoration: none;
+      -webkit-transition: color 0.1s linear;
+      -moz-transition: color 0.1s linear;
+      transition: color 0.1s linear;
+    
+      &:hover {
+        color: #01476f;
+      }
+    }
+  }
+}
+
+.side-nav {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    float: none;
+    padding: 0;
+    &:hover, &.active { background-color: #ddd; }
+  }
+  a {
+    font-family: 'Roboto Condensed';
+    color: #444;
+    display: block;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    text-decoration: none;
+
+    &:hover {
+      color: #323232;
+    }
+  }
+}
+
+#nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 120vh;
+  background-color: rgba(0,0,0,.5);
+  z-index: 997;
+
+  will-change: opacity;
+}

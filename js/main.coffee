@@ -2,7 +2,7 @@
 ---
 
 fallback.load {
-  waves_css: 'css/waves.css'
+  waves_css: '/css/waves.css'
   'WavesJS': [ '/js/waves.js' ]
   'VelocityJS': [ '/js/velocity.min.js' ]
   'jQuery': [ 'https://code.jquery.com/jquery-1.11.3.min.js' ]

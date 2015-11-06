@@ -9,7 +9,10 @@
     <div id='main-menu-nav'>
       <div class='menu-nav-container'>
         <ul class='side-nav'>
-          {% if page.type == "index" %}
+          <li>
+            <a class="page-link" href="/">Home</a>
+          </li>
+          {% if page.overview %}
             <li>
               <a href="#me" class='waves-effect'>About Me</a>
             </li>
@@ -23,13 +26,10 @@
           {% for my_page in site.pages %}
             {% if my_page.title %}
               <li>
-                <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.post_title }}</a>
               </li>
             {% endif %}
           {% endfor %}
-          <li>
-            <a href="{{}}" class='waves-effect'>Blog</a>
-          </li>
         </ul>
         <div class='menu-copyright'>
           <p class='copyright'>Andri Kurnia ©</p>

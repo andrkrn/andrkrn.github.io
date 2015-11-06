@@ -8,12 +8,29 @@
   padding: 11em 0 16em 0;
   text-align: center;
 
+  &.banner-small {
+    padding-top: 5em;
+    padding-bottom: 16em;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 6em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+
   .title {
     h1 {
       font-family: 'Roboto';
       font-size: 3em;
     }
+    h2 {
+      font-family: 'Roboto';
+    }
     h4 {
+      font-family: 'Roboto';
       font-weight: normal;
     }
   }
@@ -31,7 +48,12 @@
 
 .box {
   @extend .col-md-12;
-  padding: 4em;
+  padding: 4em !important;
+
+  &.box-small {
+    @extend .col-md-offset-1;
+    @extend .col-md-10;
+  }
 
   &.main-box {
     margin-top: -14em;
@@ -204,6 +226,7 @@
 
 /* Footer */
 #footer {
+  margin-top: 1em;
 
   .contacts {
     padding-top: 1em;

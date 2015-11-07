@@ -8,7 +8,8 @@
   padding: 11em 0 16em 0;
   text-align: center;
 
-  &.banner-small {
+  &.banner-small,
+  &.banner-small-fixed {
     padding-top: 5em;
     padding-bottom: 16em;
 
@@ -19,6 +20,10 @@
     h2 {
       font-size: 1.5em;
     }
+  }
+
+  &.banner-small-fixed {
+    padding-bottom: 6em;
   }
 
   .title {
@@ -312,4 +317,16 @@
       }
     }
   }
+}
+
+.post-container {
+  @extend .col-md-offset-2;
+  @extend .col-md-8;
+
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+#disqus_thread {
+  margin-top: 2em;
 }

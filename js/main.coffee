@@ -3,6 +3,7 @@
 
 fallback.load {
   waves_css: '/css/waves.css'
+  github_makdown_css: '/css/github-markdown.css'
   'WavesJS': [ '/js/waves.js' ]
   'VelocityJS': [ '/js/velocity.min.js' ]
   'jQuery': [ 'https://code.jquery.com/jquery-1.11.3.min.js' ]

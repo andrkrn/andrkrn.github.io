@@ -9,13 +9,15 @@
     {% include side-nav.html %}
 
     {% include header-post.html %}
-    
+
     <article class="container" itemscope itemtype="http://schema.org/BlogPosting">
       <div class="row">
         <div class="post-container">
           <div class="post-content markdown-body" itemprop="articleBody">
             {{ content }}
           </div>
+
+          {% include ads-one.html %}
 
           {% include disqus.html %}
 

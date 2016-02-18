@@ -1,0 +1,40 @@
+@import "node_modules/bulma/bulma";
+
+.hero-main {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.social-links {
+  margin-top: 2em;
+
+  .social-link {
+    color: #fff;
+  }
+}
+
+.technologies,
+.services,
+.projects {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  border-bottom: 1px solid $red;
+
+  .section-content {
+    margin-top: 3em;
+  }
+}
+
+.technology-list {
+  .technology-item {
+    @extend .is-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+
+    &.reactjs {
+      background-color: #00d8ff;
+    }
+  }
+}

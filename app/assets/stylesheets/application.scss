@@ -1,4 +1,21 @@
 @import "node_modules/bulma/bulma";
+@import "node_modules/devicons/css/devicons.scss";
+
+.text-white {
+  color: #fff;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.pad-left-20 {
+  padding-left: 20px;
+}
+
+.mar-bot-2em {
+  margin-bottom: 2em;
+}
 
 .hero-main {
   padding-top: 150px;
@@ -10,6 +27,19 @@
 
   .social-link {
     color: #fff;
+    border-bottom-color: transparent !important;
+
+    &.social-link-circle {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 50%;
+      background: rgba(197,69,60,.3);
+
+      &:hover {
+        color: #fff;
+        background: #C5453C;
+      }
+    }
   }
 }
 
@@ -27,14 +57,112 @@
 
 .technology-list {
   .technology-item {
+    position: relative;
     @extend .is-flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     height: 200px;
+
+    .devicons {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      font-size: 10em;
+      color: #222;
+      opacity: .1;
+
+      &.white {
+        color: #fff;
+      }
+    }
+
+    .technology-description {
+      z-index: 2;
+
+      .title,
+      .subtitle {
+        color: #fff;
+      }
+    }
 
     &.reactjs {
       background-color: #00d8ff;
     }
+
+    &.html5 {
+      background-color: #E34C26;
+    }
+
+    &.css3 {
+      background-color: #1572b6;
+    }
+
+    &.javascript {
+      background-color: #d6ba32;
+    }
+
+    &.sass {
+      background-color: #cf649a;
+    }
+
+    &.bootstrap {
+      background-color: #573c7e;
+    }
+
+    &.emberjs {
+      background-color: #e24b31;
+    }
+
+    &.ruby-on-rails {
+      background-color: #870801;
+    }
+  }
+}
+
+.project-list {
+  .project {
+    display: flex;
+    flex-direction: column;
+
+    .description {
+      color: #FAFAFA;
+      background-color: #0D47A1;
+      padding: 1em;
+
+      a {
+        color: #f7f7f7;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      i.fa {
+        @extend .is-inline;
+      }
+    }
+  }
+}
+
+.footer {
+  color: $grey-lighter;
+  background-color: $red;
+
+  a {
+    color: $danger-invert;
+    border-bottom-color: $danger-invert;
+
+    &:hover {
+      color: #983932;
+    }
+
+    &:hover:not(.icon) {
+      border-bottom-color: #983932;
+    }
+  }
+
+  strong {
+    color: $grey-lighter;
   }
 }

@@ -17,13 +17,17 @@ gulp.task('webserver', function() {
 
 gulp.task('sass', function () {
   return gulp.src('./app/assets/stylesheets/**/*.scss')
-    .pipe(watch('./app/assets/stylesheets/**/*.scss'))
-    .pipe(sass.sync().on('error', sass.logError))
+    // .pipe(watch('./app/assets/stylesheets/**/*.scss'))
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 10 versions', 'not ie <= 10'],
       cascade: false
     }))
     .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('./app/assets/stylesheets/**/*.scss', ['sass']);
 });
 
 gulp.task('javascript', function() {
@@ -32,6 +36,17 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('./dist/js/'));
 });
 
-gulp.task('assets', ['sass', 'javascript'])
+gulp.task('images', function() {
+  return gulp.src('./app/assets/images/**/*')
+    .pipe(watch('./app/assets/images/**/*'))
+    .pipe(gulp.dest('./dist/images/'))
+});
+
+gulp.task('fonts', function() {
+  return gulp.src('./node_modules/devicons/fonts/devicons.*')
+    .pipe(gulp.dest('./dist/fonts/'))
+});
+
+gulp.task('assets', ['sass:watch', 'javascript', 'fonts', 'images'])
 
 gulp.task('default', ['webserver', 'assets'])
